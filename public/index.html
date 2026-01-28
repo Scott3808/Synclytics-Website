@@ -75,13 +75,53 @@
             }
         }
         .animate-scroll {
-            animation: scroll 40s linear infinite;
+            animation: scroll 25s linear infinite;
         }
         .animate-scroll:hover {
             animation-play-state: paused;
         }
         .gallery-track {
             width: max-content;
+        }
+        /* Screenshot frames */
+        .screenshot-frame {
+            border: 2px solid #00E676;
+            border-radius: 1rem;
+            padding: 4px;
+            background: rgba(0, 230, 118, 0.05);
+            box-shadow: 0 0 25px rgba(0, 230, 118, 0.2), 0 0 50px rgba(0, 230, 118, 0.08);
+        }
+        .screenshot-img {
+            display: block;
+            height: 340px;
+            width: auto;
+            border-radius: 0.75rem;
+            cursor: pointer;
+            transition: transform 0.2s ease;
+        }
+        .screenshot-img:hover {
+            transform: scale(1.02);
+        }
+        /* Lightbox */
+        .lightbox {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.95);
+            z-index: 100;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+        }
+        .lightbox.active {
+            display: flex;
+        }
+        .lightbox img {
+            max-height: 90vh;
+            max-width: 90vw;
+            border-radius: 1rem;
+            border: 2px solid #00E676;
+            box-shadow: 0 0 60px rgba(0, 230, 118, 0.3);
         }
     </style>
 </head>
@@ -205,106 +245,82 @@
         </div>
 
         <!-- Carousel container -->
-        <div class="relative">
-            <div class="gallery-track flex gap-6 animate-scroll">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="overflow-hidden">
+                <div class="gallery-track flex gap-6 animate-scroll">
                 <!-- First set -->
-                <div class="gallery-slide flex-shrink-0 w-64 sm:w-72">
-                    <div class="bg-sync-card border border-white/10 rounded-2xl p-3 glow-sm">
-                        <img src="/assets/screenshots/Entry Screen.jpg" alt="Entry Screen" class="rounded-xl w-full">
-                        <p class="text-center text-sm text-sync-grey mt-3">Entry Screen</p>
+                <div class="gallery-slide flex-shrink-0">
+                    <div class="screenshot-frame">
+                        <img src="/assets/screenshots/Entry Screen.jpg" alt="Entry Screen" class="screenshot-img">
                     </div>
                 </div>
-                <div class="gallery-slide flex-shrink-0 w-64 sm:w-72">
-                    <div class="bg-sync-card border border-white/10 rounded-2xl p-3 glow-sm">
-                        <img src="/assets/screenshots/TrainerScreen.jpg" alt="Trainer Screen" class="rounded-xl w-full">
-                        <p class="text-center text-sm text-sync-grey mt-3">Trainer Setup</p>
+                <div class="gallery-slide flex-shrink-0">
+                    <div class="screenshot-frame">
+                        <img src="/assets/screenshots/Equipment.jpg" alt="Equipment Selection" class="screenshot-img">
                     </div>
                 </div>
-                <div class="gallery-slide flex-shrink-0 w-64 sm:w-72">
-                    <div class="bg-sync-card border border-white/10 rounded-2xl p-3 glow-sm">
-                        <img src="/assets/screenshots/Equipment.jpg" alt="Equipment Selection" class="rounded-xl w-full">
-                        <p class="text-center text-sm text-sync-grey mt-3">Equipment Selection</p>
+                <div class="gallery-slide flex-shrink-0">
+                    <div class="screenshot-frame">
+                        <img src="/assets/screenshots/Kick Screen.jpg" alt="Capture Screen" class="screenshot-img">
                     </div>
                 </div>
-                <div class="gallery-slide flex-shrink-0 w-64 sm:w-72">
-                    <div class="bg-sync-card border border-white/10 rounded-2xl p-3 glow-sm">
-                        <img src="/assets/screenshots/Kick Screen.jpg" alt="Capture Screen" class="rounded-xl w-full">
-                        <p class="text-center text-sm text-sync-grey mt-3">Cycle Capture</p>
+                <div class="gallery-slide flex-shrink-0">
+                    <div class="screenshot-frame">
+                        <img src="/assets/screenshots/Dig Data.jpg" alt="Dig Data" class="screenshot-img">
                     </div>
                 </div>
-                <div class="gallery-slide flex-shrink-0 w-64 sm:w-72">
-                    <div class="bg-sync-card border border-white/10 rounded-2xl p-3 glow-sm">
-                        <img src="/assets/screenshots/Dig Data.jpg" alt="Dig Data" class="rounded-xl w-full">
-                        <p class="text-center text-sm text-sync-grey mt-3">Dig Data</p>
+                <div class="gallery-slide flex-shrink-0">
+                    <div class="screenshot-frame">
+                        <img src="/assets/screenshots/Session Screen.jpg" alt="Session Screen" class="screenshot-img">
                     </div>
                 </div>
-                <div class="gallery-slide flex-shrink-0 w-64 sm:w-72">
-                    <div class="bg-sync-card border border-white/10 rounded-2xl p-3 glow-sm">
-                        <img src="/assets/screenshots/Session Screen.jpg" alt="Session Screen" class="rounded-xl w-full">
-                        <p class="text-center text-sm text-sync-grey mt-3">Session Overview</p>
+                <div class="gallery-slide flex-shrink-0">
+                    <div class="screenshot-frame">
+                        <img src="/assets/screenshots/Session Comparison.jpg" alt="Session Comparison" class="screenshot-img">
                     </div>
                 </div>
-                <div class="gallery-slide flex-shrink-0 w-64 sm:w-72">
-                    <div class="bg-sync-card border border-white/10 rounded-2xl p-3 glow-sm">
-                        <img src="/assets/screenshots/Session Comparison.jpg" alt="Session Comparison" class="rounded-xl w-full">
-                        <p class="text-center text-sm text-sync-grey mt-3">Session Comparison</p>
-                    </div>
-                </div>
-                <div class="gallery-slide flex-shrink-0 w-64 sm:w-72">
-                    <div class="bg-sync-card border border-white/10 rounded-2xl p-3 glow-sm">
-                        <img src="/assets/screenshots/Conditions Analytics.jpg" alt="Conditions Analytics" class="rounded-xl w-full">
-                        <p class="text-center text-sm text-sync-grey mt-3">Conditions Analytics</p>
+                <div class="gallery-slide flex-shrink-0">
+                    <div class="screenshot-frame">
+                        <img src="/assets/screenshots/Conditions Analytics.jpg" alt="Conditions Analytics" class="screenshot-img">
                     </div>
                 </div>
                 <!-- Duplicate set for seamless loop -->
-                <div class="gallery-slide flex-shrink-0 w-64 sm:w-72">
-                    <div class="bg-sync-card border border-white/10 rounded-2xl p-3 glow-sm">
-                        <img src="/assets/screenshots/Entry Screen.jpg" alt="Entry Screen" class="rounded-xl w-full">
-                        <p class="text-center text-sm text-sync-grey mt-3">Entry Screen</p>
+                <div class="gallery-slide flex-shrink-0">
+                    <div class="screenshot-frame">
+                        <img src="/assets/screenshots/Entry Screen.jpg" alt="Entry Screen" class="screenshot-img">
                     </div>
                 </div>
-                <div class="gallery-slide flex-shrink-0 w-64 sm:w-72">
-                    <div class="bg-sync-card border border-white/10 rounded-2xl p-3 glow-sm">
-                        <img src="/assets/screenshots/TrainerScreen.jpg" alt="Trainer Screen" class="rounded-xl w-full">
-                        <p class="text-center text-sm text-sync-grey mt-3">Trainer Setup</p>
+                <div class="gallery-slide flex-shrink-0">
+                    <div class="screenshot-frame">
+                        <img src="/assets/screenshots/Equipment.jpg" alt="Equipment Selection" class="screenshot-img">
                     </div>
                 </div>
-                <div class="gallery-slide flex-shrink-0 w-64 sm:w-72">
-                    <div class="bg-sync-card border border-white/10 rounded-2xl p-3 glow-sm">
-                        <img src="/assets/screenshots/Equipment.jpg" alt="Equipment Selection" class="rounded-xl w-full">
-                        <p class="text-center text-sm text-sync-grey mt-3">Equipment Selection</p>
+                <div class="gallery-slide flex-shrink-0">
+                    <div class="screenshot-frame">
+                        <img src="/assets/screenshots/Kick Screen.jpg" alt="Capture Screen" class="screenshot-img">
                     </div>
                 </div>
-                <div class="gallery-slide flex-shrink-0 w-64 sm:w-72">
-                    <div class="bg-sync-card border border-white/10 rounded-2xl p-3 glow-sm">
-                        <img src="/assets/screenshots/Kick Screen.jpg" alt="Capture Screen" class="rounded-xl w-full">
-                        <p class="text-center text-sm text-sync-grey mt-3">Cycle Capture</p>
+                <div class="gallery-slide flex-shrink-0">
+                    <div class="screenshot-frame">
+                        <img src="/assets/screenshots/Dig Data.jpg" alt="Dig Data" class="screenshot-img">
                     </div>
                 </div>
-                <div class="gallery-slide flex-shrink-0 w-64 sm:w-72">
-                    <div class="bg-sync-card border border-white/10 rounded-2xl p-3 glow-sm">
-                        <img src="/assets/screenshots/Dig Data.jpg" alt="Dig Data" class="rounded-xl w-full">
-                        <p class="text-center text-sm text-sync-grey mt-3">Dig Data</p>
+                <div class="gallery-slide flex-shrink-0">
+                    <div class="screenshot-frame">
+                        <img src="/assets/screenshots/Session Screen.jpg" alt="Session Screen" class="screenshot-img">
                     </div>
                 </div>
-                <div class="gallery-slide flex-shrink-0 w-64 sm:w-72">
-                    <div class="bg-sync-card border border-white/10 rounded-2xl p-3 glow-sm">
-                        <img src="/assets/screenshots/Session Screen.jpg" alt="Session Screen" class="rounded-xl w-full">
-                        <p class="text-center text-sm text-sync-grey mt-3">Session Overview</p>
+                <div class="gallery-slide flex-shrink-0">
+                    <div class="screenshot-frame">
+                        <img src="/assets/screenshots/Session Comparison.jpg" alt="Session Comparison" class="screenshot-img">
                     </div>
                 </div>
-                <div class="gallery-slide flex-shrink-0 w-64 sm:w-72">
-                    <div class="bg-sync-card border border-white/10 rounded-2xl p-3 glow-sm">
-                        <img src="/assets/screenshots/Session Comparison.jpg" alt="Session Comparison" class="rounded-xl w-full">
-                        <p class="text-center text-sm text-sync-grey mt-3">Session Comparison</p>
+                <div class="gallery-slide flex-shrink-0">
+                    <div class="screenshot-frame">
+                        <img src="/assets/screenshots/Conditions Analytics.jpg" alt="Conditions Analytics" class="screenshot-img">
                     </div>
                 </div>
-                <div class="gallery-slide flex-shrink-0 w-64 sm:w-72">
-                    <div class="bg-sync-card border border-white/10 rounded-2xl p-3 glow-sm">
-                        <img src="/assets/screenshots/Conditions Analytics.jpg" alt="Conditions Analytics" class="rounded-xl w-full">
-                        <p class="text-center text-sm text-sync-grey mt-3">Conditions Analytics</p>
-                    </div>
-                </div>
+            </div>
             </div>
         </div>
     </section>
@@ -751,6 +767,11 @@
         </div>
     </footer>
 
+    <!-- Lightbox -->
+    <div class="lightbox" id="lightbox">
+        <img src="" alt="Screenshot" id="lightbox-img">
+    </div>
+
     <!-- Smooth scroll behavior for Safari -->
     <script>
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -764,6 +785,27 @@
                     });
                 }
             });
+        });
+
+        // Lightbox
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = document.getElementById('lightbox-img');
+
+        document.querySelectorAll('.screenshot-img').forEach(img => {
+            img.addEventListener('click', () => {
+                lightboxImg.src = img.src;
+                lightbox.classList.add('active');
+            });
+        });
+
+        lightbox.addEventListener('click', () => {
+            lightbox.classList.remove('active');
+        });
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                lightbox.classList.remove('active');
+            }
         });
     </script>
 </body>
