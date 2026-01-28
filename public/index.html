@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Synclytics - Operator Metrics | See Performance Differently</title>
+    <meta name="description" content="Stage-level cycle time capture for mining equipment operators. Manual assessment tool for trainers and assessors. Free on Google Play.">
+    <link rel="icon" type="image/png" href="/assets/logo.png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'sync-green': '#00E676',
+                        'sync-black': '#000000',
+                        'sync-grey': '#a0a0a0',
+                        'sync-dark': '#0a0a0a',
+                        'sync-card': '#111111',
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            font-family: 'Inter', sans-serif;
+        }
+        .gradient-text {
+            background: linear-gradient(135deg, #00E676 0%, #00C853 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .glow {
+            box-shadow: 0 0 40px rgba(0, 230, 118, 0.15);
+        }
+        .glow-sm {
+            box-shadow: 0 0 20px rgba(0, 230, 118, 0.1);
+        }
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        .card-hover:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 0 30px rgba(0, 230, 118, 0.1);
+        }
+        .quote-mark {
+            font-size: 4rem;
+            line-height: 1;
+            color: #00E676;
+            opacity: 0.3;
+        }
+        @keyframes pulse-slow {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.7; }
+        }
+        .animate-pulse-slow {
+            animation: pulse-slow 3s ease-in-out infinite;
+        }
+        .nav-blur {
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+    </style>
+</head>
+<body class="bg-sync-black text-white antialiased">
+    <!-- Navigation -->
+    <nav class="fixed top-0 left-0 right-0 z-50 nav-blur bg-sync-black/80 border-b border-white/5">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <a href="#" class="flex items-center gap-2">
+                    <img src="/assets/logo.png" alt="Synclytics" class="h-8 w-auto">
+                    <span class="font-bold text-lg">Synclytics</span>
+                </a>
+                <div class="hidden md:flex items-center gap-8">
+                    <a href="#problem" class="text-sync-grey hover:text-white transition-colors text-sm">Problem</a>
+                    <a href="#solution" class="text-sync-grey hover:text-white transition-colors text-sm">Solution</a>
+                    <a href="#how-it-works" class="text-sync-grey hover:text-white transition-colors text-sm">How It Works</a>
+                    <a href="#pricing" class="text-sync-grey hover:text-white transition-colors text-sm">Pricing</a>
+                </div>
+                <a href="https://play.google.com/store/apps/details?id=com.synclytics.operatormetrics" target="_blank" class="bg-sync-green text-black px-4 py-2 rounded-lg font-semibold text-sm hover:bg-sync-green/90 transition-colors">
+                    Get the App
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="min-h-screen flex items-center pt-16 relative overflow-hidden">
+        <!-- Background gradient -->
+        <div class="absolute inset-0 bg-gradient-to-b from-sync-green/5 via-transparent to-transparent"></div>
+        <div class="absolute top-1/4 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-sync-green/5 rounded-full blur-3xl"></div>
+
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20 relative z-10">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div>
+                    <!-- Quote hook -->
+                    <div class="mb-8 relative">
+                        <span class="quote-mark absolute -left-2 -top-4">"</span>
+                        <p class="text-xl sm:text-2xl text-sync-grey italic pl-6">
+                            The digger op is a bit slow, his load time isn't great.
+                        </p>
+                    </div>
+
+                    <div class="space-y-4 mb-8 text-sync-grey">
+                        <p class="text-lg">Okay. But <span class="text-white font-medium">how slow?</span></p>
+                        <p class="text-lg"><span class="text-white font-medium">Compared to what?</span></p>
+                        <p class="text-lg">Which part of the load cycle?</p>
+                        <p class="text-lg">Is he always just in the hard digging?</p>
+                    </div>
+
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
+                        <span class="gradient-text">See Performance</span><br>
+                        <span class="text-white">Differently</span>
+                    </h1>
+
+                    <p class="text-lg text-sync-grey mb-8 max-w-lg">
+                        Stage-level cycle time capture for mining equipment operators. Built for trainers who need real data, not guesswork.
+                    </p>
+
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <a href="https://play.google.com/store/apps/details?id=com.synclytics.operatormetrics" target="_blank" class="inline-block">
+                            <img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play" class="h-14">
+                        </a>
+                        <div class="flex items-center gap-2 text-sync-grey">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/>
+                            </svg>
+                            <span class="text-sm">iOS Coming Soon</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- App Preview / Value Props -->
+                <div class="relative">
+                    <div class="bg-sync-card border border-white/10 rounded-2xl p-6 glow">
+                        <div class="text-sm text-sync-grey mb-4 uppercase tracking-wider">Now you can say...</div>
+                        <div class="space-y-4">
+                            <div class="bg-sync-black/50 rounded-xl p-4 border border-sync-green/20">
+                                <div class="flex items-start gap-3">
+                                    <div class="w-8 h-8 bg-sync-green/20 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                                        <svg class="w-4 h-4 text-sync-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                                        </svg>
+                                    </div>
+                                    <p class="text-white">"You're getting a nice full bucket and hitting RL."</p>
+                                </div>
+                            </div>
+                            <div class="bg-sync-black/50 rounded-xl p-4 border border-sync-green/20">
+                                <div class="flex items-start gap-3">
+                                    <div class="w-8 h-8 bg-sync-green/20 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                                        <svg class="w-4 h-4 text-sync-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/>
+                                        </svg>
+                                    </div>
+                                    <p class="text-white">"You're spending 35% longer on loaded swing than site average due to your swing angle."</p>
+                                </div>
+                            </div>
+                            <div class="bg-sync-black/50 rounded-xl p-4 border border-sync-green/20">
+                                <div class="flex items-start gap-3">
+                                    <div class="w-8 h-8 bg-sync-green/20 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                                        <svg class="w-4 h-4 text-sync-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                                        </svg>
+                                    </div>
+                                    <p class="text-white">"Your machine control and timing is spot on."</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Problem Section -->
+    <section id="problem" class="py-24 relative">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <p class="text-sync-green font-medium mb-4 uppercase tracking-wider text-sm">The Problem</p>
+                <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6">Fleet Systems Miss<br>What Trainers Need</h2>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                <div class="bg-sync-card border border-white/10 rounded-2xl p-8 card-hover">
+                    <div class="w-12 h-12 bg-red-500/10 rounded-xl flex items-center justify-center mb-6">
+                        <svg class="w-6 h-6 text-red-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Shift-Long Averages</h3>
+                    <p class="text-sync-grey">Fleet management systems give you shift averages. Great for production, useless for training. You can't coach an operator on 12 hours of blended data.</p>
+                </div>
+
+                <div class="bg-sync-card border border-white/10 rounded-2xl p-8 card-hover">
+                    <div class="w-12 h-12 bg-red-500/10 rounded-xl flex items-center justify-center mb-6">
+                        <svg class="w-6 h-6 text-red-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.172 16.172a4 4 0 015.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">No Stage Breakdown</h3>
+                    <p class="text-sync-grey">You get total cycle time. But is the problem in the dig? The swing? The dump? Without stage-level data, you're guessing where the skill gap is.</p>
+                </div>
+
+                <div class="bg-sync-card border border-white/10 rounded-2xl p-8 card-hover">
+                    <div class="w-12 h-12 bg-red-500/10 rounded-xl flex items-center justify-center mb-6">
+                        <svg class="w-6 h-6 text-red-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18.364 18.364A9 9 0 005.636 5.636m12.728 12.728A9 9 0 015.636 5.636m12.728 12.728L5.636 5.636"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">No Training Context</h3>
+                    <p class="text-sync-grey">Automated systems don't know you're running an assessment. They capture everything — including lunch breaks and shift changes.</p>
+                </div>
+
+                <div class="bg-sync-card border border-white/10 rounded-2xl p-8 card-hover">
+                    <div class="w-12 h-12 bg-red-500/10 rounded-xl flex items-center justify-center mb-6">
+                        <svg class="w-6 h-6 text-red-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Paper & Clipboard</h3>
+                    <p class="text-sync-grey">So trainers go back to stopwatches and paper. Scratching down times that are hard to read, harder to compare, and impossible to trend over time.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Solution Section -->
+    <section id="solution" class="py-24 bg-gradient-to-b from-sync-green/5 to-transparent">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <p class="text-sync-green font-medium mb-4 uppercase tracking-wider text-sm">The Solution</p>
+                <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6">Stage-Level Precision<br>Built for Trainers</h2>
+                <p class="text-sync-grey text-lg max-w-2xl mx-auto">
+                    Operator Metrics breaks down every cycle into its component stages. Tap to capture, then see exactly where time is gained or lost.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+                <div class="bg-sync-card border border-white/10 rounded-2xl p-6 text-center card-hover">
+                    <div class="w-16 h-16 bg-sync-green/10 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-8 h-8 text-sync-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"/>
+                        </svg>
+                    </div>
+                    <h3 class="font-semibold text-lg mb-2">Dig</h3>
+                    <p class="text-sync-grey text-sm">Capture dig time and depth accuracy</p>
+                </div>
+
+                <div class="bg-sync-card border border-white/10 rounded-2xl p-6 text-center card-hover">
+                    <div class="w-16 h-16 bg-sync-green/10 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-8 h-8 text-sync-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
+                        </svg>
+                    </div>
+                    <h3 class="font-semibold text-lg mb-2">Swing Loaded</h3>
+                    <p class="text-sync-grey text-sm">Track loaded swing time to truck</p>
+                </div>
+
+                <div class="bg-sync-card border border-white/10 rounded-2xl p-6 text-center card-hover">
+                    <div class="w-16 h-16 bg-sync-green/10 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-8 h-8 text-sync-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                        </svg>
+                    </div>
+                    <h3 class="font-semibold text-lg mb-2">Dump</h3>
+                    <p class="text-sync-grey text-sm">Record dump time and bucket fill</p>
+                </div>
+
+                <div class="bg-sync-card border border-white/10 rounded-2xl p-6 text-center card-hover">
+                    <div class="w-16 h-16 bg-sync-green/10 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-8 h-8 text-sync-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/>
+                        </svg>
+                    </div>
+                    <h3 class="font-semibold text-lg mb-2">Swing Empty</h3>
+                    <p class="text-sync-grey text-sm">Measure return swing to face</p>
+                </div>
+            </div>
+
+            <!-- Feature Grid -->
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="flex items-start gap-4 p-6 bg-sync-card/50 rounded-xl border border-white/5">
+                    <div class="w-10 h-10 bg-sync-green/10 rounded-lg flex items-center justify-center flex-shrink-0">
+                        <svg class="w-5 h-5 text-sync-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4"/>
+                        </svg>
+                    </div>
+                    <div>
+                        <h4 class="font-semibold mb-1">Bucket Fill Factor</h4>
+                        <p class="text-sync-grey text-sm">Track fill consistency across cycles</p>
+                    </div>
+                </div>
+
+                <div class="flex items-start gap-4 p-6 bg-sync-card/50 rounded-xl border border-white/5">
+                    <div class="w-10 h-10 bg-sync-green/10 rounded-lg flex items-center justify-center flex-shrink-0">
+                        <svg class="w-5 h-5 text-sync-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16V4m0 0L3 8m4-4l4 4m6 0v12m0 0l4-4m-4 4l-4-4"/>
+                        </svg>
+                    </div>
+                    <div>
+                        <h4 class="font-semibold mb-1">Depth Accuracy</h4>
+                        <p class="text-sync-grey text-sm">Monitor dig depth consistency</p>
+                    </div>
+                </div>
+
+                <div class="flex items-start gap-4 p-6 bg-sync-card/50 rounded-xl border border-white/5">
+                    <div class="w-10 h-10 bg-sync-green/10 rounded-lg flex items-center justify-center flex-shrink-0">
+                        <svg class="w-5 h-5 text-sync-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                        </svg>
+                    </div>
+                    <div>
+                        <h4 class="font-semibold mb-1">Crowd vs Curl Timing</h4>
+                        <p class="text-sync-grey text-sm">Analyse dig technique breakdown</p>
+                    </div>
+                </div>
+
+                <div class="flex items-start gap-4 p-6 bg-sync-card/50 rounded-xl border border-white/5">
+                    <div class="w-10 h-10 bg-sync-green/10 rounded-lg flex items-center justify-center flex-shrink-0">
+                        <svg class="w-5 h-5 text-sync-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                        </svg>
+                    </div>
+                    <div>
+                        <h4 class="font-semibold mb-1">Swing Angle</h4>
+                        <p class="text-sync-grey text-sm">Coming soon</p>
+                    </div>
+                </div>
+
+                <div class="flex items-start gap-4 p-6 bg-sync-card/50 rounded-xl border border-white/5">
+                    <div class="w-10 h-10 bg-sync-green/10 rounded-lg flex items-center justify-center flex-shrink-0">
+                        <svg class="w-5 h-5 text-sync-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18.364 5.636a9 9 0 010 12.728m0 0l-2.829-2.829m2.829 2.829L21 21M15.536 8.464a5 5 0 010 7.072m0 0l-2.829-2.829m-4.243 2.829a4.978 4.978 0 01-1.414-2.83m-1.414 5.658a9 9 0 01-2.167-9.238m7.824 2.167a1 1 0 111.414 1.414m-1.414-1.414L3 3"/>
+                        </svg>
+                    </div>
+                    <div>
+                        <h4 class="font-semibold mb-1">Works Offline</h4>
+                        <p class="text-sync-grey text-sm">No signal? No problem. Sync later.</p>
+                    </div>
+                </div>
+
+                <div class="flex items-start gap-4 p-6 bg-sync-card/50 rounded-xl border border-white/5">
+                    <div class="w-10 h-10 bg-sync-green/10 rounded-lg flex items-center justify-center flex-shrink-0">
+                        <svg class="w-5 h-5 text-sync-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+                        </svg>
+                    </div>
+                    <div>
+                        <h4 class="font-semibold mb-1">Millisecond Accuracy</h4>
+                        <p class="text-sync-grey text-sm">Precise timestamps every tap</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Design callout -->
+            <div class="mt-12 bg-sync-card border border-sync-green/20 rounded-2xl p-8 flex flex-col md:flex-row items-center gap-6 glow-sm">
+                <div class="w-16 h-16 bg-sync-green/10 rounded-2xl flex items-center justify-center flex-shrink-0">
+                    <svg class="w-8 h-8 text-sync-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"/>
+                    </svg>
+                </div>
+                <div>
+                    <h3 class="font-semibold text-xl mb-2">Built for the Pit</h3>
+                    <p class="text-sync-grey">Dark theme that's easy on the eyes. Large tap targets sized for gloved hands. No fiddly menus when you're standing next to running equipment.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section id="how-it-works" class="py-24">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <p class="text-sync-green font-medium mb-4 uppercase tracking-wider text-sm">How It Works</p>
+                <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6">Four Steps to<br>Better Feedback</h2>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="relative">
+                    <div class="bg-sync-card border border-white/10 rounded-2xl p-6 h-full card-hover">
+                        <div class="w-12 h-12 bg-sync-green text-black rounded-xl flex items-center justify-center font-bold text-xl mb-6">1</div>
+                        <h3 class="font-semibold text-xl mb-3">Setup</h3>
+                        <p class="text-sync-grey">Select operator, equipment type, and assessment context. Takes seconds.</p>
+                    </div>
+                    <div class="hidden lg:block absolute top-1/2 -right-4 w-8 text-sync-green">
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                        </svg>
+                    </div>
+                </div>
+
+                <div class="relative">
+                    <div class="bg-sync-card border border-white/10 rounded-2xl p-6 h-full card-hover">
+                        <div class="w-12 h-12 bg-sync-green text-black rounded-xl flex items-center justify-center font-bold text-xl mb-6">2</div>
+                        <h3 class="font-semibold text-xl mb-3">Capture</h3>
+                        <p class="text-sync-grey">Tap stage buttons as the operator works. Dig, swing loaded, dump, swing empty. Repeat.</p>
+                    </div>
+                    <div class="hidden lg:block absolute top-1/2 -right-4 w-8 text-sync-green">
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                        </svg>
+                    </div>
+                </div>
+
+                <div class="relative">
+                    <div class="bg-sync-card border border-white/10 rounded-2xl p-6 h-full card-hover">
+                        <div class="w-12 h-12 bg-sync-green text-black rounded-xl flex items-center justify-center font-bold text-xl mb-6">3</div>
+                        <h3 class="font-semibold text-xl mb-3">Assess</h3>
+                        <p class="text-sync-grey">Review stage times, compare to benchmarks, identify exactly where improvements can be made.</p>
+                    </div>
+                    <div class="hidden lg:block absolute top-1/2 -right-4 w-8 text-sync-green">
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                        </svg>
+                    </div>
+                </div>
+
+                <div class="relative">
+                    <div class="bg-sync-card border border-white/10 rounded-2xl p-6 h-full card-hover">
+                        <div class="w-12 h-12 bg-sync-green text-black rounded-xl flex items-center justify-center font-bold text-xl mb-6">4</div>
+                        <h3 class="font-semibold text-xl mb-3">Export</h3>
+                        <p class="text-sync-grey">Download CSV or JSON data for reporting, trending, or integration with your training systems.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Who It's For -->
+    <section id="who" class="py-24 bg-gradient-to-b from-transparent via-sync-green/5 to-transparent">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <p class="text-sync-green font-medium mb-4 uppercase tracking-wider text-sm">Who It's For</p>
+                <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6">Built for Mining<br>Training Professionals</h2>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-sync-card border border-white/10 rounded-2xl p-8 card-hover">
+                    <div class="w-14 h-14 bg-sync-green/10 rounded-2xl flex items-center justify-center mb-6">
+                        <svg class="w-7 h-7 text-sync-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/>
+                        </svg>
+                    </div>
+                    <h3 class="font-semibold text-xl mb-3">Equipment Trainers</h3>
+                    <p class="text-sync-grey">Need to show operators exactly where they're losing time — not just tell them they're "a bit slow".</p>
+                </div>
+
+                <div class="bg-sync-card border border-white/10 rounded-2xl p-8 card-hover">
+                    <div class="w-14 h-14 bg-sync-green/10 rounded-2xl flex items-center justify-center mb-6">
+                        <svg class="w-7 h-7 text-sync-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"/>
+                        </svg>
+                    </div>
+                    <h3 class="font-semibold text-xl mb-3">Assessors</h3>
+                    <p class="text-sync-grey">Conducting competency evaluations and VOCs who need objective, documented evidence of operator performance.</p>
+                </div>
+
+                <div class="bg-sync-card border border-white/10 rounded-2xl p-8 card-hover">
+                    <div class="w-14 h-14 bg-sync-green/10 rounded-2xl flex items-center justify-center mb-6">
+                        <svg class="w-7 h-7 text-sync-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"/>
+                        </svg>
+                    </div>
+                    <h3 class="font-semibold text-xl mb-3">Training Coordinators</h3>
+                    <p class="text-sync-grey">Managing operator development programs and need consistent data to track improvement over time.</p>
+                </div>
+            </div>
+
+            <!-- Equipment types -->
+            <div class="mt-16 text-center">
+                <p class="text-sync-grey mb-6">Supported Equipment</p>
+                <div class="flex flex-wrap justify-center gap-4">
+                    <span class="bg-sync-card border border-white/10 px-6 py-3 rounded-full text-sm font-medium">Excavators</span>
+                    <span class="bg-sync-card border border-white/10 px-6 py-3 rounded-full text-sm font-medium">Wheel Loaders</span>
+                    <span class="bg-sync-card border border-white/10 px-6 py-3 rounded-full text-sm font-medium">Shovels</span>
+                    <span class="bg-sync-card border border-white/10 px-6 py-3 rounded-full text-sm text-sync-grey">Trucks (Coming Soon)</span>
+                    <span class="bg-sync-card border border-white/10 px-6 py-3 rounded-full text-sm text-sync-grey">Dozers (Coming Soon)</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing -->
+    <section id="pricing" class="py-24">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <p class="text-sync-green font-medium mb-4 uppercase tracking-wider text-sm">Pricing</p>
+                <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6">Start Free.<br>Export When Ready.</h2>
+                <p class="text-sync-grey text-lg max-w-2xl mx-auto">
+                    Capture and assess for free. Subscribe when you need to export data for reporting and integration.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                <div class="bg-sync-card border border-white/10 rounded-2xl p-8">
+                    <div class="mb-6">
+                        <h3 class="text-2xl font-bold mb-2">Free</h3>
+                        <p class="text-sync-grey">Get started with core features</p>
+                    </div>
+                    <div class="text-4xl font-bold mb-8">$0</div>
+                    <ul class="space-y-4 mb-8">
+                        <li class="flex items-center gap-3">
+                            <svg class="w-5 h-5 text-sync-green flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                            </svg>
+                            <span>Stage-level cycle capture</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <svg class="w-5 h-5 text-sync-green flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                            </svg>
+                            <span>In-app analytics</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <svg class="w-5 h-5 text-sync-green flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                            </svg>
+                            <span>Offline support</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <svg class="w-5 h-5 text-sync-green flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                            </svg>
+                            <span>Unlimited sessions</span>
+                        </li>
+                    </ul>
+                    <a href="https://play.google.com/store/apps/details?id=com.synclytics.operatormetrics" target="_blank" class="block w-full bg-white/10 text-white text-center py-3 rounded-xl font-semibold hover:bg-white/20 transition-colors">
+                        Download Free
+                    </a>
+                </div>
+
+                <div class="bg-sync-card border border-sync-green/50 rounded-2xl p-8 relative glow">
+                    <div class="absolute -top-3 left-1/2 -translate-x-1/2 bg-sync-green text-black text-xs font-bold px-3 py-1 rounded-full">
+                        PRO
+                    </div>
+                    <div class="mb-6">
+                        <h3 class="text-2xl font-bold mb-2">Subscription</h3>
+                        <p class="text-sync-grey">Export and integrate your data</p>
+                    </div>
+                    <div class="text-4xl font-bold mb-2">Unlock Export</div>
+                    <p class="text-sync-grey text-sm mb-8">In-app purchase</p>
+                    <ul class="space-y-4 mb-8">
+                        <li class="flex items-center gap-3">
+                            <svg class="w-5 h-5 text-sync-green flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                            </svg>
+                            <span>Everything in Free</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <svg class="w-5 h-5 text-sync-green flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                            </svg>
+                            <span>CSV data export</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <svg class="w-5 h-5 text-sync-green flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                            </svg>
+                            <span>JSON data export</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <svg class="w-5 h-5 text-sync-green flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                            </svg>
+                            <span>Integrate with your systems</span>
+                        </li>
+                    </ul>
+                    <a href="https://play.google.com/store/apps/details?id=com.synclytics.operatormetrics" target="_blank" class="block w-full bg-sync-green text-black text-center py-3 rounded-xl font-semibold hover:bg-sync-green/90 transition-colors">
+                        Get Started
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="py-24 relative overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-t from-sync-green/10 to-transparent"></div>
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+            <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6">Ready to See Performance<br><span class="gradient-text">Differently?</span></h2>
+            <p class="text-sync-grey text-lg mb-10 max-w-2xl mx-auto">
+                Stop guessing where operators need improvement. Start capturing the data that makes a difference.
+            </p>
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-6">
+                <a href="https://play.google.com/store/apps/details?id=com.synclytics.operatormetrics" target="_blank" class="inline-block">
+                    <img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play" class="h-16">
+                </a>
+                <div class="flex items-center gap-3 bg-sync-card border border-white/10 px-6 py-4 rounded-xl">
+                    <svg class="w-8 h-8 text-sync-grey" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/>
+                    </svg>
+                    <div class="text-left">
+                        <p class="text-xs text-sync-grey uppercase tracking-wider">iOS App</p>
+                        <p class="font-semibold">Coming Soon</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-12 border-t border-white/10">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row items-center justify-between gap-6">
+                <div class="flex items-center gap-2">
+                    <img src="/assets/logo.png" alt="Synclytics" class="h-8 w-auto">
+                    <span class="font-bold">Synclytics</span>
+                </div>
+                <div class="flex items-center gap-6 text-sync-grey text-sm">
+                    <a href="mailto:software@synclytics.tech" class="hover:text-white transition-colors">software@synclytics.tech</a>
+                </div>
+                <p class="text-sync-grey text-sm">&copy; 2026 Synclytics. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Smooth scroll behavior for Safari -->
+    <script>
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>

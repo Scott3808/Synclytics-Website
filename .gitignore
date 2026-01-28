@@ -1,0 +1,21 @@
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editor files
+.vscode/
+.idea/
+.claude/
+*.swp
+*.swo
+
+# Logs
+*.log
+
+# Source design files (keep out of deployment)
+/*.ai
+/*.eps
+/*.pdf
+/*.png
+/*.jpeg
+linkedin_banner*
