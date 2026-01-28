@@ -65,6 +65,24 @@
             backdrop-filter: blur(12px);
             -webkit-backdrop-filter: blur(12px);
         }
+        /* Gallery animation */
+        @keyframes scroll {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(-50%);
+            }
+        }
+        .animate-scroll {
+            animation: scroll 40s linear infinite;
+        }
+        .animate-scroll:hover {
+            animation-play-state: paused;
+        }
+        .gallery-track {
+            width: max-content;
+        }
     </style>
 </head>
 <body class="bg-sync-black text-white antialiased">
@@ -171,6 +189,120 @@
                                 </div>
                             </div>
                         </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- App Screenshots Gallery -->
+    <section id="screenshots" class="py-24 overflow-hidden">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <p class="text-sync-green font-medium mb-4 uppercase tracking-wider text-sm">See It In Action</p>
+                <h2 class="text-3xl sm:text-4xl font-bold">Built for the Field</h2>
+            </div>
+        </div>
+
+        <!-- Carousel container -->
+        <div class="relative">
+            <div class="gallery-track flex gap-6 animate-scroll">
+                <!-- First set -->
+                <div class="gallery-slide flex-shrink-0 w-64 sm:w-72">
+                    <div class="bg-sync-card border border-white/10 rounded-2xl p-3 glow-sm">
+                        <img src="/assets/screenshots/Entry Screen.jpg" alt="Entry Screen" class="rounded-xl w-full">
+                        <p class="text-center text-sm text-sync-grey mt-3">Entry Screen</p>
+                    </div>
+                </div>
+                <div class="gallery-slide flex-shrink-0 w-64 sm:w-72">
+                    <div class="bg-sync-card border border-white/10 rounded-2xl p-3 glow-sm">
+                        <img src="/assets/screenshots/TrainerScreen.jpg" alt="Trainer Screen" class="rounded-xl w-full">
+                        <p class="text-center text-sm text-sync-grey mt-3">Trainer Setup</p>
+                    </div>
+                </div>
+                <div class="gallery-slide flex-shrink-0 w-64 sm:w-72">
+                    <div class="bg-sync-card border border-white/10 rounded-2xl p-3 glow-sm">
+                        <img src="/assets/screenshots/Equipment.jpg" alt="Equipment Selection" class="rounded-xl w-full">
+                        <p class="text-center text-sm text-sync-grey mt-3">Equipment Selection</p>
+                    </div>
+                </div>
+                <div class="gallery-slide flex-shrink-0 w-64 sm:w-72">
+                    <div class="bg-sync-card border border-white/10 rounded-2xl p-3 glow-sm">
+                        <img src="/assets/screenshots/Kick Screen.jpg" alt="Capture Screen" class="rounded-xl w-full">
+                        <p class="text-center text-sm text-sync-grey mt-3">Cycle Capture</p>
+                    </div>
+                </div>
+                <div class="gallery-slide flex-shrink-0 w-64 sm:w-72">
+                    <div class="bg-sync-card border border-white/10 rounded-2xl p-3 glow-sm">
+                        <img src="/assets/screenshots/Dig Data.jpg" alt="Dig Data" class="rounded-xl w-full">
+                        <p class="text-center text-sm text-sync-grey mt-3">Dig Data</p>
+                    </div>
+                </div>
+                <div class="gallery-slide flex-shrink-0 w-64 sm:w-72">
+                    <div class="bg-sync-card border border-white/10 rounded-2xl p-3 glow-sm">
+                        <img src="/assets/screenshots/Session Screen.jpg" alt="Session Screen" class="rounded-xl w-full">
+                        <p class="text-center text-sm text-sync-grey mt-3">Session Overview</p>
+                    </div>
+                </div>
+                <div class="gallery-slide flex-shrink-0 w-64 sm:w-72">
+                    <div class="bg-sync-card border border-white/10 rounded-2xl p-3 glow-sm">
+                        <img src="/assets/screenshots/Session Comparison.jpg" alt="Session Comparison" class="rounded-xl w-full">
+                        <p class="text-center text-sm text-sync-grey mt-3">Session Comparison</p>
+                    </div>
+                </div>
+                <div class="gallery-slide flex-shrink-0 w-64 sm:w-72">
+                    <div class="bg-sync-card border border-white/10 rounded-2xl p-3 glow-sm">
+                        <img src="/assets/screenshots/Conditions Analytics.jpg" alt="Conditions Analytics" class="rounded-xl w-full">
+                        <p class="text-center text-sm text-sync-grey mt-3">Conditions Analytics</p>
+                    </div>
+                </div>
+                <!-- Duplicate set for seamless loop -->
+                <div class="gallery-slide flex-shrink-0 w-64 sm:w-72">
+                    <div class="bg-sync-card border border-white/10 rounded-2xl p-3 glow-sm">
+                        <img src="/assets/screenshots/Entry Screen.jpg" alt="Entry Screen" class="rounded-xl w-full">
+                        <p class="text-center text-sm text-sync-grey mt-3">Entry Screen</p>
+                    </div>
+                </div>
+                <div class="gallery-slide flex-shrink-0 w-64 sm:w-72">
+                    <div class="bg-sync-card border border-white/10 rounded-2xl p-3 glow-sm">
+                        <img src="/assets/screenshots/TrainerScreen.jpg" alt="Trainer Screen" class="rounded-xl w-full">
+                        <p class="text-center text-sm text-sync-grey mt-3">Trainer Setup</p>
+                    </div>
+                </div>
+                <div class="gallery-slide flex-shrink-0 w-64 sm:w-72">
+                    <div class="bg-sync-card border border-white/10 rounded-2xl p-3 glow-sm">
+                        <img src="/assets/screenshots/Equipment.jpg" alt="Equipment Selection" class="rounded-xl w-full">
+                        <p class="text-center text-sm text-sync-grey mt-3">Equipment Selection</p>
+                    </div>
+                </div>
+                <div class="gallery-slide flex-shrink-0 w-64 sm:w-72">
+                    <div class="bg-sync-card border border-white/10 rounded-2xl p-3 glow-sm">
+                        <img src="/assets/screenshots/Kick Screen.jpg" alt="Capture Screen" class="rounded-xl w-full">
+                        <p class="text-center text-sm text-sync-grey mt-3">Cycle Capture</p>
+                    </div>
+                </div>
+                <div class="gallery-slide flex-shrink-0 w-64 sm:w-72">
+                    <div class="bg-sync-card border border-white/10 rounded-2xl p-3 glow-sm">
+                        <img src="/assets/screenshots/Dig Data.jpg" alt="Dig Data" class="rounded-xl w-full">
+                        <p class="text-center text-sm text-sync-grey mt-3">Dig Data</p>
+                    </div>
+                </div>
+                <div class="gallery-slide flex-shrink-0 w-64 sm:w-72">
+                    <div class="bg-sync-card border border-white/10 rounded-2xl p-3 glow-sm">
+                        <img src="/assets/screenshots/Session Screen.jpg" alt="Session Screen" class="rounded-xl w-full">
+                        <p class="text-center text-sm text-sync-grey mt-3">Session Overview</p>
+                    </div>
+                </div>
+                <div class="gallery-slide flex-shrink-0 w-64 sm:w-72">
+                    <div class="bg-sync-card border border-white/10 rounded-2xl p-3 glow-sm">
+                        <img src="/assets/screenshots/Session Comparison.jpg" alt="Session Comparison" class="rounded-xl w-full">
+                        <p class="text-center text-sm text-sync-grey mt-3">Session Comparison</p>
+                    </div>
+                </div>
+                <div class="gallery-slide flex-shrink-0 w-64 sm:w-72">
+                    <div class="bg-sync-card border border-white/10 rounded-2xl p-3 glow-sm">
+                        <img src="/assets/screenshots/Conditions Analytics.jpg" alt="Conditions Analytics" class="rounded-xl w-full">
+                        <p class="text-center text-sm text-sync-grey mt-3">Conditions Analytics</p>
                     </div>
                 </div>
             </div>
