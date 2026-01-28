@@ -158,11 +158,11 @@
     <!-- Hero Section -->
     <section class="min-h-screen flex items-center pt-16 relative overflow-hidden">
         <!-- Particles background -->
-        <div id="particles-js" class="absolute inset-0 z-0"></div>
+        <div id="particles-js" class="absolute inset-0 z-30 pointer-events-none"></div>
         <!-- Background gradient -->
-        <div class="absolute inset-0 bg-gradient-to-b from-sync-green/5 via-transparent to-transparent"></div>
+        <div class="absolute inset-0 bg-gradient-to-b from-sync-green/5 via-transparent to-transparent pointer-events-none"></div>
 
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20 relative z-10">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20 relative z-20">
             <div class="grid lg:grid-cols-2 gap-12 items-center">
                 <div>
                     <!-- Quote hook -->
@@ -871,7 +871,7 @@
                 }
             },
             interactivity: {
-                detect_on: 'canvas',
+                detect_on: 'window',
                 events: {
                     onhover: {
                         enable: true,
