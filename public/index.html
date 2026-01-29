@@ -4,7 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Synclytics - Operator Metrics | See Performance Differently</title>
-    <meta name="description" content="Stage-level cycle time capture for mining equipment operators. Manual assessment tool for trainers and assessors. Free on Google Play.">
+    <meta name="description" content="Operator Metrics - Stage-level cycle time capture for mining equipment trainers and assessors. Track dig, swing, and dump times. Free Android app.">
+    <meta property="og:title" content="Synclytics - Operator Metrics">
+    <meta property="og:description" content="Stage-level cycle time capture for mining equipment trainers. See exactly where operators lose time. Free Android app.">
+    <meta property="og:image" content="/assets/logo.png">
+    <meta property="og:url" content="https://synclytics.tech">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
     <link rel="icon" type="image/png" href="/assets/logo.png">
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -103,6 +109,13 @@
         .screenshot-img:hover {
             transform: scale(1.02);
         }
+        .screenshot-caption {
+            text-align: center;
+            color: #a0a0a0;
+            font-size: 0.8rem;
+            margin-top: 0.5rem;
+            padding: 0 4px;
+        }
         /* Lightbox */
         .lightbox {
             display: none;
@@ -131,6 +144,42 @@
             height: 100%;
             z-index: 0;
         }
+        /* Gallery dots */
+        .gallery-dots {
+            display: none;
+        }
+        @media (max-width: 768px) {
+            .gallery-dots {
+                display: flex;
+                justify-content: center;
+                gap: 8px;
+                margin-top: 1rem;
+            }
+            .gallery-dot {
+                width: 8px;
+                height: 8px;
+                border-radius: 50%;
+                background: rgba(255, 255, 255, 0.3);
+                transition: background 0.3s;
+            }
+            .gallery-dot.active {
+                background: #00E676;
+            }
+        }
+        /* Mobile hamburger menu */
+        .mobile-menu {
+            display: none;
+        }
+        .mobile-menu.open {
+            display: block;
+        }
+        /* Ensure minimum tap targets */
+        @media (max-width: 768px) {
+            a, button, .gallery-slide {
+                min-height: 44px;
+                min-width: 44px;
+            }
+        }
     </style>
 </head>
 <body class="bg-sync-black text-white antialiased">
@@ -148,9 +197,26 @@
                     <a href="#how-it-works" class="text-sync-grey hover:text-white transition-colors text-sm">How It Works</a>
                     <a href="#pricing" class="text-sync-grey hover:text-white transition-colors text-sm">Pricing</a>
                 </div>
-                <a href="https://play.google.com/store/apps/details?id=com.synclytics.operatormetrics" target="_blank" class="bg-sync-green text-black px-4 py-2 rounded-lg font-semibold text-sm hover:bg-sync-green/90 transition-colors">
-                    Get the App
-                </a>
+                <div class="flex items-center gap-3">
+                    <a href="https://play.google.com/store/apps/details?id=com.synclytics.operatormetrics" target="_blank" class="bg-sync-green text-black px-4 py-2 rounded-lg font-semibold text-sm hover:bg-sync-green/90 transition-colors">
+                        Get the App
+                    </a>
+                    <!-- Hamburger menu button (mobile) -->
+                    <button id="hamburger-btn" class="md:hidden flex items-center justify-center w-11 h-11 rounded-lg border border-white/10 hover:bg-white/10 transition-colors" aria-label="Open menu">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+            <!-- Mobile menu -->
+            <div id="mobile-menu" class="mobile-menu md:hidden pb-4">
+                <div class="flex flex-col gap-2">
+                    <a href="#problem" class="mobile-nav-link text-sync-grey hover:text-white transition-colors text-sm py-3 px-2 rounded-lg hover:bg-white/5">Problem</a>
+                    <a href="#solution" class="mobile-nav-link text-sync-grey hover:text-white transition-colors text-sm py-3 px-2 rounded-lg hover:bg-white/5">Solution</a>
+                    <a href="#how-it-works" class="mobile-nav-link text-sync-grey hover:text-white transition-colors text-sm py-3 px-2 rounded-lg hover:bg-white/5">How It Works</a>
+                    <a href="#pricing" class="mobile-nav-link text-sync-grey hover:text-white transition-colors text-sm py-3 px-2 rounded-lg hover:bg-white/5">Pricing</a>
+                </div>
             </div>
         </div>
     </nav>
@@ -180,13 +246,17 @@
                         <p class="text-lg">Is he always just in the hard digging?</p>
                     </div>
 
-                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
+                    <h1 class="text-5xl sm:text-6xl lg:text-7xl font-extrabold mb-4 leading-tight">
                         <span class="gradient-text">See Performance</span><br>
                         <span class="text-white">Differently</span>
                     </h1>
 
-                    <p class="text-lg text-sync-grey mb-8 max-w-lg">
-                        Stage-level cycle time capture for mining equipment operators. Built for trainers who need real data, not guesswork.
+                    <p class="text-lg text-sync-grey mb-2 max-w-lg font-medium">
+                        Stage-level cycle time capture for mining trainers and assessors
+                    </p>
+
+                    <p class="text-base text-sync-grey mb-8 max-w-lg">
+                        Built for trainers who need real data, not guesswork.
                     </p>
 
                     <div class="flex flex-col sm:flex-row gap-4">
@@ -244,6 +314,29 @@
         </div>
     </section>
 
+    <!-- Social Proof Section -->
+    <section id="social-proof" class="py-20 bg-gradient-to-b from-transparent via-sync-green/5 to-transparent">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <p class="text-sync-green font-medium mb-4 uppercase tracking-wider text-sm">Social Proof</p>
+                <h2 class="text-3xl sm:text-4xl font-bold mb-4">What Trainers Are Saying</h2>
+                <p class="text-sync-grey text-lg">Join 10+ mining trainers already using Operator Metrics</p>
+            </div>
+            <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                <div class="bg-sync-card border border-white/10 rounded-2xl p-8 card-hover">
+                    <div class="quote-mark mb-2">"</div>
+                    <p class="text-white text-lg mb-6">Finally, data I can actually use in a debrief.</p>
+                    <p class="text-sync-grey text-sm">— Equipment Trainer, WA</p>
+                </div>
+                <div class="bg-sync-card border border-white/10 rounded-2xl p-8 card-hover">
+                    <div class="quote-mark mb-2">"</div>
+                    <p class="text-white text-lg mb-6">Beats the clipboard and stopwatch I've been using for 15 years.</p>
+                    <p class="text-sync-grey text-sm">— Training Coordinator</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- App Screenshots Gallery -->
     <section id="screenshots" class="py-24 overflow-hidden">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -262,74 +355,98 @@
                     <div class="screenshot-frame">
                         <img src="/assets/screenshots/Entry Screen.jpg" alt="Entry Screen" class="screenshot-img">
                     </div>
+                    <p class="screenshot-caption">Quick session setup</p>
                 </div>
                 <div class="gallery-slide flex-shrink-0">
                     <div class="screenshot-frame">
                         <img src="/assets/screenshots/Equipment.jpg" alt="Equipment Selection" class="screenshot-img">
                     </div>
+                    <p class="screenshot-caption">Select your equipment type</p>
                 </div>
                 <div class="gallery-slide flex-shrink-0">
                     <div class="screenshot-frame">
                         <img src="/assets/screenshots/Kick Screen.jpg" alt="Capture Screen" class="screenshot-img">
                     </div>
+                    <p class="screenshot-caption">Tap to capture each stage</p>
                 </div>
                 <div class="gallery-slide flex-shrink-0">
                     <div class="screenshot-frame">
                         <img src="/assets/screenshots/Dig Data.jpg" alt="Dig Data" class="screenshot-img">
                     </div>
+                    <p class="screenshot-caption">Review dig metrics instantly</p>
                 </div>
                 <div class="gallery-slide flex-shrink-0">
                     <div class="screenshot-frame">
                         <img src="/assets/screenshots/Session Screen.jpg" alt="Session Screen" class="screenshot-img">
                     </div>
+                    <p class="screenshot-caption">Full session breakdown</p>
                 </div>
                 <div class="gallery-slide flex-shrink-0">
                     <div class="screenshot-frame">
                         <img src="/assets/screenshots/Session Comparison.jpg" alt="Session Comparison" class="screenshot-img">
                     </div>
+                    <p class="screenshot-caption">Compare operators side-by-side</p>
                 </div>
                 <div class="gallery-slide flex-shrink-0">
                     <div class="screenshot-frame">
                         <img src="/assets/screenshots/Conditions Analytics.jpg" alt="Conditions Analytics" class="screenshot-img">
                     </div>
+                    <p class="screenshot-caption">Track performance by conditions</p>
                 </div>
                 <!-- Duplicate set for seamless loop -->
                 <div class="gallery-slide flex-shrink-0">
                     <div class="screenshot-frame">
                         <img src="/assets/screenshots/Entry Screen.jpg" alt="Entry Screen" class="screenshot-img">
                     </div>
+                    <p class="screenshot-caption">Quick session setup</p>
                 </div>
                 <div class="gallery-slide flex-shrink-0">
                     <div class="screenshot-frame">
                         <img src="/assets/screenshots/Equipment.jpg" alt="Equipment Selection" class="screenshot-img">
                     </div>
+                    <p class="screenshot-caption">Select your equipment type</p>
                 </div>
                 <div class="gallery-slide flex-shrink-0">
                     <div class="screenshot-frame">
                         <img src="/assets/screenshots/Kick Screen.jpg" alt="Capture Screen" class="screenshot-img">
                     </div>
+                    <p class="screenshot-caption">Tap to capture each stage</p>
                 </div>
                 <div class="gallery-slide flex-shrink-0">
                     <div class="screenshot-frame">
                         <img src="/assets/screenshots/Dig Data.jpg" alt="Dig Data" class="screenshot-img">
                     </div>
+                    <p class="screenshot-caption">Review dig metrics instantly</p>
                 </div>
                 <div class="gallery-slide flex-shrink-0">
                     <div class="screenshot-frame">
                         <img src="/assets/screenshots/Session Screen.jpg" alt="Session Screen" class="screenshot-img">
                     </div>
+                    <p class="screenshot-caption">Full session breakdown</p>
                 </div>
                 <div class="gallery-slide flex-shrink-0">
                     <div class="screenshot-frame">
                         <img src="/assets/screenshots/Session Comparison.jpg" alt="Session Comparison" class="screenshot-img">
                     </div>
+                    <p class="screenshot-caption">Compare operators side-by-side</p>
                 </div>
                 <div class="gallery-slide flex-shrink-0">
                     <div class="screenshot-frame">
                         <img src="/assets/screenshots/Conditions Analytics.jpg" alt="Conditions Analytics" class="screenshot-img">
                     </div>
+                    <p class="screenshot-caption">Track performance by conditions</p>
                 </div>
             </div>
+            </div>
+            <!-- Swipe indicator dots for mobile -->
+            <div class="gallery-dots" id="gallery-dots">
+                <span class="gallery-dot active"></span>
+                <span class="gallery-dot"></span>
+                <span class="gallery-dot"></span>
+                <span class="gallery-dot"></span>
+                <span class="gallery-dot"></span>
+                <span class="gallery-dot"></span>
+                <span class="gallery-dot"></span>
             </div>
         </div>
     </section>
@@ -699,7 +816,7 @@
                         <h3 class="text-2xl font-bold mb-2">Subscription</h3>
                         <p class="text-sync-grey">Export and integrate your data</p>
                     </div>
-                    <div class="text-4xl font-bold mb-2">Unlock Export</div>
+                    <div class="text-4xl font-bold mb-2">Subscribe in-app</div>
                     <p class="text-sync-grey text-sm mb-8">In-app purchase</p>
                     <ul class="space-y-4 mb-8">
                         <li class="flex items-center gap-3">
@@ -724,13 +841,24 @@
                             <svg class="w-5 h-5 text-sync-green flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
                             </svg>
-                            <span>Integrate with your systems</span>
+                            <span>Export to Excel, Power BI, or your training database</span>
                         </li>
                     </ul>
                     <a href="https://play.google.com/store/apps/details?id=com.synclytics.operatormetrics" target="_blank" class="block w-full bg-sync-green text-black text-center py-3 rounded-xl font-semibold hover:bg-sync-green/90 transition-colors">
                         Get Started
                     </a>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trust Signals -->
+    <section class="py-16">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-wrap justify-center gap-4">
+                <span class="bg-sync-card border border-white/10 px-6 py-3 rounded-full text-sm font-medium">Australian Built 🇦🇺</span>
+                <span class="bg-sync-card border border-white/10 px-6 py-3 rounded-full text-sm font-medium">Your data stays on your device 🔒</span>
+                <span class="bg-sync-card border border-white/10 px-6 py-3 rounded-full text-sm font-medium">Works offline 📶</span>
             </div>
         </div>
     </section>
@@ -757,6 +885,16 @@
                     </div>
                 </div>
             </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="py-16 border-t border-white/5">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <p class="text-sync-grey text-lg mb-6">Questions or feedback? We'd love to hear from you.</p>
+            <a href="mailto:software@synclytics.tech" class="inline-block bg-sync-green text-black px-8 py-3 rounded-xl font-semibold text-sm hover:bg-sync-green/90 transition-colors min-h-[44px]">
+                Email Us
+            </a>
         </div>
     </section>
 
@@ -815,6 +953,19 @@
             if (e.key === 'Escape') {
                 lightbox.classList.remove('active');
             }
+        });
+
+        // Hamburger menu toggle
+        const hamburgerBtn = document.getElementById('hamburger-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        hamburgerBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('open');
+        });
+        // Close mobile menu on link click
+        document.querySelectorAll('.mobile-nav-link').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.remove('open');
+            });
         });
 
         // Particles.js config
