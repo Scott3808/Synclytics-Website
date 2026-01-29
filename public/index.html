@@ -97,11 +97,21 @@
             padding: 4px;
             background: rgba(0, 230, 118, 0.05);
             box-shadow: 0 0 25px rgba(0, 230, 118, 0.2), 0 0 50px rgba(0, 230, 118, 0.08);
+            height: 352px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+        .gallery-slide {
+            width: 220px;
         }
         .screenshot-img {
             display: block;
             height: 340px;
             width: auto;
+            max-width: 100%;
+            object-fit: contain;
             border-radius: 0.75rem;
             cursor: pointer;
             transition: transform 0.2s ease;
