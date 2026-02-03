@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy - Synclytics</title>
+    <meta name="description" content="Synclytics Privacy Policy - Learn how we protect your data and privacy.">
+    <meta property="og:title" content="Privacy Policy - Synclytics">
+    <meta property="og:description" content="Synclytics Privacy Policy - Learn how we protect your data and privacy.">
+    <meta property="og:image" content="/assets/logo.png">
+    <meta property="og:url" content="https://synclytics.tech/privacy.html">
+    <meta property="og:type" content="website">
+    <link rel="icon" type="image/png" href="/assets/logo.png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'sync-green': '#00E676',
+                        'sync-black': '#000000',
+                        'sync-grey': '#a0a0a0',
+                        'sync-dark': '#0a0a0a',
+                        'sync-card': '#111111',
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            font-family: 'Inter', sans-serif;
+        }
+        .gradient-text {
+            background: linear-gradient(135deg, #00E676 0%, #00C853 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .nav-blur {
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+        .prose-custom h2 {
+            color: #00E676;
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-top: 2.5rem;
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .prose-custom h3 {
+            color: white;
+            font-size: 1.125rem;
+            font-weight: 600;
+            margin-top: 1.5rem;
+            margin-bottom: 0.75rem;
+        }
+        .prose-custom p {
+            color: #a0a0a0;
+            margin-bottom: 1rem;
+            line-height: 1.7;
+        }
+        .prose-custom ul {
+            color: #a0a0a0;
+            margin-bottom: 1rem;
+            padding-left: 1.5rem;
+        }
+        .prose-custom li {
+            margin-bottom: 0.5rem;
+            list-style-type: disc;
+        }
+        .prose-custom strong {
+            color: white;
+        }
+        .prose-custom hr {
+            border-color: rgba(255, 255, 255, 0.1);
+            margin: 2rem 0;
+        }
+        .prose-custom a {
+            color: #00E676;
+            text-decoration: none;
+        }
+        .prose-custom a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body class="bg-sync-black text-white antialiased">
+    <!-- Navigation -->
+    <nav class="fixed top-0 left-0 right-0 z-50 nav-blur bg-sync-black/80 border-b border-white/5">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <a href="/" class="flex items-center gap-2">
+                    <img src="/assets/logo.png" alt="Synclytics" class="h-8 w-auto">
+                    <span class="font-bold text-lg">Synclytics</span>
+                </a>
+                <a href="/" class="text-sync-grey hover:text-white transition-colors text-sm">Back to Home</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Privacy Policy Content -->
+    <main class="pt-24 pb-16">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="mb-8">
+                <p class="text-sync-green font-medium mb-2 uppercase tracking-wider text-sm">Legal</p>
+                <h1 class="text-3xl sm:text-4xl font-bold mb-4">Privacy Policy</h1>
+                <p class="text-sync-grey">Effective Date: 2026-01-14 | Version 2.4</p>
+            </div>
+
+            <div class="bg-sync-card border border-white/10 rounded-2xl p-6 sm:p-8 prose-custom">
+                <p>SYNCLYTICS ("we", "our", "us") respects your privacy. This Privacy Policy explains how we collect, use, and disclose information when you use our app SYNCLYTICS ("Software"), including beta versions.</p>
+
+                <p><strong>Important:</strong> SYNCLYTICS does NOT collect, transmit, or store any personal information in identifiable form. All personal data (trainer names, operator names, employee IDs) remain stored locally on your device and are never transmitted to our servers.</p>
+
+                <p><strong>Pseudonymised Operator Tracking:</strong> We use industry-standard HMAC-SHA256 cryptographic hashing to create pseudonymised operator identifiers. These hashed identifiers are transmitted to our servers for global performance analytics. While the hashing process is computationally one-way, we classify this as <strong>pseudonymised data</strong> under GDPR Article 4(5) because re-identification may be theoretically possible with additional information. We do not hold or have access to any information that would enable re-identification.</p>
+
+                <p><strong>Privacy-Preserving Location Data:</strong> We use NASA/NSIDC EASE-Grid 2.0 to convert GPS coordinates to 10km × 10km geographic cells (100 km² areas). Raw GPS coordinates are <strong>never stored or transmitted</strong> - only coarse region identifiers are collected for regional analytics.</p>
+
+                <hr>
+
+                <h2>1. Personal Information</h2>
+
+                <p><strong>SYNCLYTICS does not collect, transmit, or store any personal information in identifiable form.</strong></p>
+
+                <p>All personal data entered into the app remains stored locally on your device:</p>
+
+                <ul>
+                    <li>Trainer names and employee IDs</li>
+                    <li>Operator names and employee IDs (original/unhashed)</li>
+                    <li>Equipment asset IDs</li>
+                    <li>Session notes</li>
+                    <li>GPS coordinates (if enabled)</li>
+                </ul>
+
+                <p>This information is <strong>never transmitted</strong> to our servers and remains entirely under your control.</p>
+
+                <h3>1.1 Pseudonymised Operator Identifiers</h3>
+
+                <p><strong>We DO collect pseudonymised operator identifiers</strong> created using HMAC-SHA256 cryptographic hashing:</p>
+
+                <ul>
+                    <li><strong>What is collected:</strong> A cryptographic hash (64-character hexadecimal string) derived from operator identifying information</li>
+                    <li><strong>Purpose:</strong> Enables global performance analytics across multiple devices/trainers while protecting operator identity</li>
+                    <li><strong>Legal classification under GDPR:</strong> This is <strong>pseudonymised data</strong> under Article 4(5), not fully anonymised data, because the hashing process is computationally one-way but not mathematically irreversible, re-identification could theoretically occur with additional information not held by SYNCLYTICS, and SYNCLYTICS does not hold the information necessary to perform re-identification</li>
+                    <li><strong>Legal classification under Australian Privacy Act 1988 (as amended):</strong> We treat hashed identifiers as potentially falling within the definition of "personal information" and apply appropriate safeguards accordingly</li>
+                    <li><strong>Cross-device consistency:</strong> Same operator working with different trainers/devices generates identical hash, enabling aggregated performance analysis</li>
+                </ul>
+
+                <p><strong>Technical details:</strong> HMAC (Hash-based Message Authentication Code) with SHA-256 algorithm is an industry-standard, NIST-approved cryptographic function. While the hashing process is computationally one-way, we do not claim it provides absolute irreversibility.</p>
+
+                <p><strong>Safeguards we apply:</strong></p>
+
+                <ul>
+                    <li>We do not hold the source data that could be used for re-identification</li>
+                    <li>We do not attempt to re-identify individuals from hashed identifiers</li>
+                    <li>Access to hashed data is restricted and audited</li>
+                    <li>Data is encrypted in transit and at rest</li>
+                </ul>
+
+                <h3>1.2 Privacy-Preserving Location Data (EASE-Grid 2.0)</h3>
+
+                <p><strong>We DO collect coarse geographic region identifiers</strong> using the EASE-Grid 2.0 standard:</p>
+
+                <ul>
+                    <li><strong>What is collected:</strong> EASE-Grid 2.0 cell IDs representing 10km × 10km geographic regions (100 km² area)</li>
+                    <li><strong>Example:</strong> GPS coordinates (-31.9505°S, 115.8605°E) becomes cell ID "R-128C463" (Perth region, covers ~100 km²)</li>
+                    <li><strong>Purpose:</strong> Enables regional performance analytics without exposing precise locations</li>
+                    <li><strong>Legal classification:</strong> Due to the coarse resolution (100 km² cells containing multiple potential sites and thousands of individuals), we consider this data to be effectively anonymised and not personal information under GDPR or the Australian Privacy Act 1988 (as amended)</li>
+                    <li><strong>How it works:</strong> GPS coordinates captured on your device are immediately converted to EASE-Grid cell ID; original coordinates are discarded and never stored or transmitted</li>
+                    <li><strong>Standard system:</strong> NASA/NSIDC EASE-Grid 2.0 (EPSG:6933) cylindrical equal-area projection</li>
+                </ul>
+
+                <p><strong>Technical details:</strong> EASE-Grid 2.0 is a globally-recognised geographic grid system where every cell is exactly 100 km². Raw GPS coordinates are never stored in the database or transmitted to servers - only the cell ID (format: "R{row}C{col}") is retained.</p>
+
+                <p><strong>Privacy characteristics:</strong></p>
+
+                <ul>
+                    <li>Raw GPS coordinates never stored or transmitted</li>
+                    <li>100 km² resolution prevents identification of specific sites</li>
+                    <li>Optional - app continues without location if permission denied</li>
+                </ul>
+
+                <h3>1.3 Installation Identifier</h3>
+
+                <p><strong>We DO collect an installation identifier</strong> for device registration and session tracking:</p>
+
+                <ul>
+                    <li><strong>What is collected:</strong> A randomly-generated UUID (Universally Unique Identifier) created on first app launch</li>
+                    <li><strong>Example:</strong> "a1b2c3d4-e5f6-7890-abcd-ef1234567890"</li>
+                    <li><strong>Purpose:</strong> Links sessions from the same device installation for data integrity and subscription validation</li>
+                    <li><strong>Legal classification:</strong> Not personal information because it is randomly generated with no connection to device hardware (not IMEI, serial number, etc.), cannot be used to identify individuals or specific physical devices, changes if app is reinstalled, and has no linkage to personal identity</li>
+                </ul>
+
+                <hr>
+
+                <h2>2. Data We Collect</h2>
+
+                <p>We collect the following categories of data:</p>
+
+                <p><strong>Pseudonymised Identifiers (treated as potentially personal information):</strong></p>
+
+                <ul>
+                    <li>HMAC-SHA256 hashed operator IDs (64-character hexadecimal strings)</li>
+                    <li>HMAC-SHA256 hashed trainer IDs (64-character hexadecimal strings)</li>
+                </ul>
+
+                <p><strong>Non-Personal Operational Data:</strong></p>
+
+                <ul>
+                    <li>EASE-Grid 2.0 cell IDs (10km × 10km regions, format: "R{row}C{col}")</li>
+                    <li>Random installation UUID</li>
+                    <li>Equipment type (e.g., "Excavator", "Shovel")</li>
+                    <li>Equipment manufacturer (OEM)</li>
+                    <li>Equipment model number</li>
+                    <li>Equipment capacity (bucket size in cubic metres)</li>
+                    <li>Equipment rated payload (tonnes)</li>
+                    <li>Stage durations (dig, swing, dump times in milliseconds)</li>
+                    <li>Cycle durations (total time per load)</li>
+                    <li>Bucket fill factor percentages</li>
+                    <li>Tonnes per hour calculations</li>
+                    <li>Material P80 fragmentation size (millimetres)</li>
+                    <li>Material hardness ratings (soft, medium, hard, very hard)</li>
+                    <li>Session duration and cycle counts</li>
+                    <li>Session timestamps</li>
+                </ul>
+
+                <p><strong>What We Do NOT Collect:</strong></p>
+
+                <ul>
+                    <li>Names of trainers or operators</li>
+                    <li>Employee IDs (original/unhashed)</li>
+                    <li>Equipment asset IDs or serial numbers</li>
+                    <li>Company names or identifiers</li>
+                    <li>Precise GPS coordinates or exact location data</li>
+                    <li>Device hardware identifiers (IMEI, serial numbers, etc.)</li>
+                    <li>IP addresses (not logged or stored)</li>
+                    <li>Email addresses</li>
+                    <li>Phone numbers</li>
+                </ul>
+
+                <hr>
+
+                <h2>3. How We Use Collected Data</h2>
+
+                <p>Collected data is used for:</p>
+
+                <ul>
+                    <li><strong>Global Performance Analytics:</strong> Tracking cycle stage performance across multiple trainers/devices using pseudonymised identifiers</li>
+                    <li><strong>Regional Performance Trends:</strong> Analysing equipment efficiency by geographic region using EASE-Grid cells</li>
+                    <li><strong>Industry Benchmark Development:</strong> Creating performance baselines for different equipment types and operating conditions</li>
+                    <li><strong>Statistical Analysis:</strong> Understanding industry-wide efficiency trends</li>
+                    <li><strong>Software Improvement:</strong> Identifying common usage patterns to enhance features</li>
+                    <li><strong>Research:</strong> Contributing to mining equipment efficiency research (aggregated data only)</li>
+                    <li><strong>Aggregate Reporting:</strong> Publishing industry reports with aggregated, non-identifiable data</li>
+                </ul>
+
+                <p><strong>Example of Aggregated Data:</strong></p>
+
+                <ul>
+                    <li>"Excavators operating in hard material (P80 800mm) average 18.5 seconds per dig cycle"</li>
+                    <li>"Shovels with 34m³ buckets achieve 92% average bucket fill factor"</li>
+                    <li>"EASE-Grid cell R-128C463 (100 km² region) shows 8.7% better efficiency than tropical regions"</li>
+                </ul>
+
+                <hr>
+
+                <h2>4. Data Sharing and Disclosure</h2>
+
+                <p><strong>Personal Information:</strong> We do not share personal information because we do not collect it in identifiable form.</p>
+
+                <p><strong>Pseudonymised and Operational Data:</strong> May be shared with:</p>
+
+                <ul>
+                    <li>Cloud hosting providers (AWS, Google Cloud, Render) for data storage and processing</li>
+                    <li>Third-party analytics providers (for statistical analysis only, under data processing agreements)</li>
+                    <li>Research institutions (aggregated data only, for academic studies on equipment efficiency)</li>
+                    <li>Industry publications (aggregated benchmarks only)</li>
+                </ul>
+
+                <p><strong>Commercial Use of Data:</strong></p>
+
+                <ul>
+                    <li>We may sell, license, or share pseudonymised operational metrics and aggregated analytics with third parties for commercial purposes</li>
+                    <li>Such data will never include personal information in identifiable form</li>
+                    <li>We do not share data in a form that could reasonably identify individuals or specific companies</li>
+                    <li>Raw session data is not provided to third parties without appropriate safeguards and data processing agreements</li>
+                </ul>
+
+                <hr>
+
+                <h2>5. Data Storage and Security</h2>
+
+                <p><strong>Local Storage (On Your Device):</strong></p>
+
+                <ul>
+                    <li>All personal information is stored in an SQLite database on your device</li>
+                    <li>You control this data through app export/delete features</li>
+                    <li>Uninstalling the app deletes all local data permanently</li>
+                </ul>
+
+                <p><strong>Remote Storage (Our Servers):</strong></p>
+
+                <ul>
+                    <li>Only pseudonymised identifiers and non-personal operational metrics are transmitted to our servers</li>
+                    <li>Data is transmitted using HTTPS encryption (TLS 1.2 or higher)</li>
+                    <li>Data is stored on secure cloud servers (AWS/Google Cloud/Render) with encryption at rest</li>
+                    <li>Access to servers is restricted and audited</li>
+                </ul>
+
+                <p><strong>Technical and Organisational Measures:</strong></p>
+
+                <p>We implement appropriate technical and organisational measures to protect information, including:</p>
+
+                <ul>
+                    <li>HMAC-SHA256 cryptographic hashing of identifiers before transmission</li>
+                    <li>Industry-standard encryption for data transmission (TLS) and storage (encryption at rest)</li>
+                    <li>Access controls and audit logging</li>
+                    <li>Regular security reviews</li>
+                    <li>Data minimisation (collecting only what is necessary)</li>
+                    <li>Pseudonymisation of personal identifiers</li>
+                </ul>
+
+                <p>While we implement reasonable security measures, no system can guarantee absolute security.</p>
+
+                <hr>
+
+                <h2>6. Your Rights and Control</h2>
+
+                <p><strong>Data Access:</strong></p>
+
+                <ul>
+                    <li>You can view all captured sessions and metrics within the app</li>
+                    <li>Data export (JSON/CSV format) is available with an active subscription</li>
+                </ul>
+
+                <p><strong>Data Deletion:</strong></p>
+
+                <ul>
+                    <li>Uninstalling the app deletes all local data from your device</li>
+                    <li>Server-side data cannot be deleted on request because pseudonymised identifiers cannot be linked back to specific individuals - we have no way to identify which data belongs to you</li>
+                </ul>
+
+                <p><strong>Data Portability:</strong></p>
+
+                <ul>
+                    <li>Export your data in JSON or CSV format (requires active subscription)</li>
+                </ul>
+
+                <p><strong>Data Collection:</strong></p>
+
+                <ul>
+                    <li>Data upload is required to use the app</li>
+                    <li>By using the app, you agree to the collection of pseudonymised operational metrics as described in this policy</li>
+                </ul>
+
+                <p><strong>Rights Under Australian Privacy Act 1988 (as amended):</strong></p>
+
+                <p>If you are in Australia, you have the right to:</p>
+
+                <ul>
+                    <li>Request access to any personal information we hold about you</li>
+                    <li>Request correction of inaccurate information</li>
+                    <li>Lodge a complaint with the Office of the Australian Information Commissioner (OAIC) if you believe we have breached the Australian Privacy Principles</li>
+                </ul>
+
+                <p><strong>Rights Under GDPR (if applicable):</strong></p>
+
+                <p>If GDPR applies to you, you have the right to:</p>
+
+                <ul>
+                    <li>Access your personal data</li>
+                    <li>Rectification of inaccurate data</li>
+                    <li>Erasure of your data ("right to be forgotten")</li>
+                    <li>Restriction of processing</li>
+                    <li>Data portability</li>
+                    <li>Object to processing</li>
+                    <li>Lodge a complaint with a supervisory authority</li>
+                </ul>
+
+                <p>To exercise any of these rights, contact us at <a href="mailto:support@synclytics.tech">support@synclytics.tech</a>.</p>
+
+                <hr>
+
+                <h2>7. Legal Basis for Processing</h2>
+
+                <p><strong>Under GDPR (if applicable):</strong></p>
+
+                <ul>
+                    <li><strong>Legitimate Interest (Article 6(1)(f)):</strong> We have a legitimate interest in collecting pseudonymised operational metrics for software improvement, industry benchmarking, and research. We have conducted a balancing assessment and determined that our processing does not override your rights and freedoms, particularly given the pseudonymisation measures we apply.</li>
+                    <li><strong>Consent (Article 6(1)(a)):</strong> By using the app, you consent to the collection of pseudonymised operational metrics.</li>
+                </ul>
+
+                <p><strong>Under Australian Privacy Act 1988 (as amended):</strong></p>
+
+                <ul>
+                    <li>We collect and handle information in accordance with the Australian Privacy Principles (APPs)</li>
+                    <li>Collection is reasonably necessary for our business functions (APP 3)</li>
+                    <li>We take reasonable steps to protect information from misuse (APP 11)</li>
+                </ul>
+
+                <hr>
+
+                <h2>8. International Data Transfers</h2>
+
+                <p>Pseudonymised operational metrics may be stored on servers located outside Australia (e.g., AWS US, Google Cloud EU). These transfers are subject to:</p>
+
+                <ul>
+                    <li>Standard contractual clauses or equivalent safeguards for data protection</li>
+                    <li>Compliance with GDPR requirements for international transfers (if applicable)</li>
+                    <li>Compliance with Australian Privacy Principle 8 (cross-border disclosure)</li>
+                    <li>Encryption during transmission and storage</li>
+                </ul>
+
+                <hr>
+
+                <h2>9. Data Retention</h2>
+
+                <p><strong>On Your Device:</strong></p>
+
+                <ul>
+                    <li>Data remains indefinitely until you delete it or uninstall the app</li>
+                </ul>
+
+                <p><strong>On Our Servers:</strong></p>
+
+                <ul>
+                    <li>Pseudonymised operational metrics are retained for <strong>5 years</strong> for benchmarking purposes</li>
+                    <li>After 5 years, data is deleted or further aggregated such that individual sessions cannot be distinguished</li>
+                    <li>Earlier deletion is not possible as we cannot identify which data belongs to specific users or devices</li>
+                </ul>
+
+                <hr>
+
+                <h2>10. Children's Privacy</h2>
+
+                <p>SYNCLYTICS is <strong>not intended for use by children under 16 years of age</strong> (or the applicable age in your jurisdiction). We do not knowingly collect data from children. Due to our pseudonymisation approach, we cannot identify or delete data from any specific individual, including children. Parents and guardians are responsible for ensuring children do not use the app.</p>
+
+                <hr>
+
+                <h2>11. Third-Party Services</h2>
+
+                <p>SYNCLYTICS integrates with the following third-party services:</p>
+
+                <p><strong>Infrastructure Providers:</strong></p>
+
+                <ul>
+                    <li>AWS (cloud hosting and storage)</li>
+                    <li>Google Cloud (cloud hosting and storage)</li>
+                    <li>Render (cloud hosting and storage)</li>
+                </ul>
+
+                <p><strong>Communication Services:</strong></p>
+
+                <ul>
+                    <li>Resend (feedback email delivery)</li>
+                </ul>
+
+                <p>These providers process data under data processing agreements and are bound by their own privacy policies.</p>
+
+                <p><strong>We do NOT use:</strong></p>
+
+                <ul>
+                    <li>Advertising networks</li>
+                    <li>Social media tracking pixels</li>
+                    <li>Behavioural analytics platforms (e.g., Mixpanel, Amplitude)</li>
+                    <li>User profiling services</li>
+                </ul>
+
+                <hr>
+
+                <h2>12. Changes to This Privacy Policy</h2>
+
+                <p>We may update this Privacy Policy to reflect:</p>
+
+                <ul>
+                    <li>Changes in legal requirements</li>
+                    <li>New features or data collection practices</li>
+                    <li>Improvements to our privacy practices</li>
+                </ul>
+
+                <p><strong>How You'll Be Notified:</strong></p>
+
+                <ul>
+                    <li>Updated effective date at the top of this document</li>
+                    <li>In-app notification of material privacy policy changes</li>
+                    <li>Continued use of the app after updates constitutes acceptance of non-material changes</li>
+                </ul>
+
+                <p><strong>Material Changes:</strong></p>
+
+                <p>If we make material changes that affect your rights (e.g., collecting new categories of personal information), we will:</p>
+
+                <ul>
+                    <li>Provide prominent notice in the app</li>
+                    <li>Where required, request your consent before implementing changes</li>
+                    <li>Offer opt-out options where appropriate</li>
+                </ul>
+
+                <hr>
+
+                <h2>13. Contact Us</h2>
+
+                <p>For privacy questions or concerns:</p>
+
+                <p><strong>Email:</strong> <a href="mailto:support@synclytics.tech">support@synclytics.tech</a></p>
+
+                <p><strong>Response Time:</strong> We aim to respond to privacy enquiries within 30 days, as required by Australian law.</p>
+
+                <hr>
+
+                <h2>Summary</h2>
+
+                <p><strong>We DO collect:</strong> Pseudonymised operator/trainer identifiers (HMAC-SHA256 hashes) plus coarse location data and equipment metrics</p>
+
+                <p><strong>We DO NOT collect:</strong> Names, employee IDs (original/unhashed), equipment asset IDs, company info, precise GPS coordinates, device hardware identifiers, or directly identifying information</p>
+
+                <p><strong>Your personal data:</strong> Remains on your device, never transmitted to servers in identifiable form</p>
+
+                <p><strong>Identifier protection:</strong> HMAC-SHA256 hashing provides pseudonymisation—hashed identifiers receive appropriate safeguards</p>
+
+                <p><strong>Location privacy:</strong> GPS converted to 10km × 10km grid cells; raw coordinates never stored or transmitted</p>
+
+                <p><strong>Why we collect data:</strong> To build industry benchmarks, enable regional analytics, and improve the app</p>
+
+                <p><strong>Security:</strong> Cryptographic hashing, encryption in transit and at rest, access controls</p>
+
+                <p><strong>Your control:</strong> Export or delete local data anytime</p>
+
+                <p class="text-sync-grey text-sm mt-8">Last Updated: 2026-01-14 | Version: 2.4</p>
+
+                <p class="text-sync-grey text-sm">© 2026 SYNCLYTICS Pty Ltd. All rights reserved.</p>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="py-12 border-t border-white/10">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row items-center justify-between gap-6">
+                <div class="flex items-center gap-2">
+                    <img src="/assets/logo.png" alt="Synclytics" class="h-8 w-auto">
+                    <span class="font-bold">Synclytics</span>
+                </div>
+                <div class="flex items-center gap-6 text-sm text-sync-grey">
+                    <a href="/" class="hover:text-white transition-colors">Home</a>
+                    <a href="mailto:support@synclytics.tech" class="hover:text-white transition-colors">support@synclytics.tech</a>
+                </div>
+                <p class="text-sync-grey text-sm">© 2026 Synclytics. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
